@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API Integration Service</title>
+  <meta name="description" content="API Endpoint Integration Application" />
+  <meta name="author" content="Lovable" />
+
+  <meta property="og:title" content="API Integration App" />
+  <meta property="og:description" content="Lightweight API endpoint for automation workflows" />
+  <meta property="og:type" content="website" />
+
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='cosmic/styles.css') }}">
+</head>
+
+<body>
+  <canvas id="canvas"></canvas>
+
+  <div class="content">
+    <div class="text-container">
+      <h1 class="title">API Integration Service</h1>
+
+      <div class="text-group">
+        <p class="description">
+          This web application serves as a <span class="highlight">lightweight API endpoint</span> designed to integrate
+          with an automation workflow in n8n.
+        </p>
+
+      </div>
+
+      <div class="text-group">
+        <p class="description">
+          Built using <span class="highlight-alt">Flask</span>, it enables seamless interaction between machine learning
+          models and external platforms that do not natively support Python execution.
+        </p>
+        </form>
+
+        <div class="text-group">
+          <a href="{{ url_for('testing') }}">
+            <button class="navigate-button">Go to Test Page</button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+
+    <script src="{{ url_for('static', filename='cosmic/script.js') }}"></script>
+</body>
+
+</html>

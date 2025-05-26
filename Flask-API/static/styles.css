@@ -1,0 +1,292 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+.navigate-button:hover {
+  background-color: #0f2942;
+  box-shadow: 0 0 5px rgba(79, 209, 197, 0.5);
+  text-shadow: 0 0 15px rgba(79, 209, 197, 1);
+}
+
+.navigate-button:active {
+  transform: translateY(2px);
+}
+
+
+body {
+  /* Updated to cosmic gradient background */
+  background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+  color: #f8fafc;
+  font-family: 'JetBrains Mono', monospace;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* Canvas for particle background */
+#canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Content container */
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 0 2rem;
+  flex-shrink: 0;
+}
+
+/* Text container with more transparent glass effect */
+.text-container {
+  max-width: 700px;
+  text-align: center;
+  padding: 2.2rem;
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  background-color: rgba(13, 18, 30, 0.2); /* More transparent */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(173, 216, 230, 0.1);
+  transform: translateY(0);
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Title styling */
+.title {
+  font-size: 1.3rem; /* Slightly smaller */
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #67e8f9; /* cyan-300 equivalent */
+  letter-spacing: 1px;
+  text-shadow: 0 0 15px rgba(103, 232, 249, 0.5);
+}
+
+/* Text group styling with fade-in animation */
+.text-group {
+  margin-bottom: 1rem;
+  opacity: 0;
+  animation: fadeIn 0.8s forwards;
+}
+
+.text-group:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.text-group:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+/* Description text styling - slightly smaller */
+.description {
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+}
+.navigate-button {
+  padding: 7px 21px;
+  background-color: #1d3355; /* Dark blue background */
+  border: 1px solid #4fd1c5; /* Cyan border */
+  border-radius: 4px;
+  cursor: pointer;
+  font-size:0.95rem;
+  font-family: 'Courier New', monospace; /* More tech-like font */
+  font-weight: 300;
+  color: #4fd1c5; /* Bright cyan text */
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 1px rgba(79, 209, 197, 0.3);
+  margin : 10px 20px;
+  line-height: 1.8;
+
+}
+/* Highlight colors */
+.highlight {
+  color: #67e8f9; /* cyan-300 equivalent */
+  font-weight: 500;
+  text-shadow: 0 0 10px rgba(103, 232, 249, 0.3);
+}
+
+.highlight-alt {
+  color: #22d3ee; /* cyan-400 equivalent */
+  font-weight: 500;
+  text-shadow: 0 0 10px rgba(34, 211, 238, 0.3);
+}
+
+/* Animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive styles */
+@media (max-width: 640px) {
+  .text-container {
+    padding: 1.5rem;
+  }
+  
+  .description {
+    font-size: 0.85rem;
+  }
+}
+
+/* Main vertical stack for container + footer */
+.main-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  width: 100%;
+  gap: 38px;
+}
+
+.container {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  background: rgba(20, 30, 48, 0.92);
+  padding: 2.2rem 2rem 1.5rem 2rem;
+  border-radius: 24px 24px 18px 18px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(173, 216, 230, 0.13);
+  position: relative;
+  z-index: 2;
+  transition: box-shadow 0.3s, background 0.3s;
+}
+
+.container h1 {
+  color: #67e8f9;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(103, 232, 249, 0.3);
+}
+
+textarea {
+  width: 100%;
+  height: 120px;
+  padding: 12px;
+  border: 1.5px solid #4fd1c5;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  resize: vertical;
+  font-size: 1rem;
+  background: rgba(255,255,255,0.08);
+  color: #f8fafc;
+  transition: border 0.2s, background 0.2s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+textarea:focus {
+  border: 1.5px solid #67e8f9;
+  outline: none;
+  background: rgba(255,255,255,0.18);
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+button[type="reset"], button[type="submit"] {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(111, 126, 183, 0.08);
+}
+button[type="reset"] {
+  background: #f1f1f1;
+  color: #203a43;
+}
+button[type="reset"]:hover {
+  background: #e0e0e0;
+}
+button[type="submit"] {
+  background: linear-gradient(90deg, #4fd1c5 0%, #67e8f9 100%);
+  color: #203a43;
+}
+button[type="submit"]:hover {
+  background: linear-gradient(90deg, #67e8f9 0%, #4fd1c5 100%);
+  color: #203a43;
+}
+
+.result {
+  margin-top: 22px;
+  padding: 16px;
+  background: rgba(103, 232, 249, 0.08);
+  border-left: 4px solid #67e8f9;
+  border-radius: 6px;
+  font-size: 1.05rem;
+  color: #f8fafc;
+  box-shadow: 0 1px 6px rgba(74, 109, 229, 0.06);
+}
+
+footer {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.05em;
+  color: #67e8f9;
+  opacity: 0.95;
+  letter-spacing: 0.01em;
+  background: rgba(8, 13, 22, 0.7);
+  box-shadow: 0 4px 24px rgba(103, 232, 249, 0.13);
+  font-style: italic;
+  border-top: 1.5px solid #67e8f9;
+  padding: 22px 18px 12px 18px;
+  max-width: 500px;
+  width: 100%;
+  border-radius: 0 0 18px 18px;
+  z-index: 1;
+  font-family: 'JetBrains Mono', monospace;
+  text-shadow: 0 0 8px rgba(103, 232, 249, 0.18);
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+@media (max-width: 600px) {
+  .main-stack {
+    min-height: 90vh;
+    gap: 24px;
+  }
+  .container {
+    padding: 1.2rem 0.5rem 1rem 0.5rem;
+    max-width: 98vw;
+  }
+  footer {
+    max-width: 98vw;
+    font-size: 0.93em;
+    padding-top: 16px;
+    border-radius: 0 0 14px 14px;
+  }
+}

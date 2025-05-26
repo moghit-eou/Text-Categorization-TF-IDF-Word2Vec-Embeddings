@@ -12,7 +12,7 @@ stop_words_small = nlp_small.Defaults.stop_words
 
 
 def tokenizer(sentence):
-    punctuations = string.punctuations
+    punctuations = string.punctuation
                    
     doc = nlp_small(sentence)  # -> tokenization
 
@@ -46,6 +46,7 @@ def predict_(sentence):
     words = tokenizer(sentence)
     average_vector = avg_vector(words)
     return model.predict([average_vector])
+
 
 
 print ("Prediction module loaded successfully.")

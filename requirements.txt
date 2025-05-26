@@ -55,12 +55,11 @@ psutil==7.0.0
 pure-eval==0.2.3
 pydantic==2.11.5
 pydantic-core==2.33.2
-pywin32==310
 pygments==2.19.1
 pyparsing==3.2.3
 python-dateutil==2.9.0.post0
 pytz==2025.2
-pywin32==310
+#pywin32==310
 pyzmq==26.4.0
 requests==2.32.3
 rich==14.0.0

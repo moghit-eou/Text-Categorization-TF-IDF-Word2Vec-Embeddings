@@ -5,10 +5,11 @@ import numpy as np
 import string
 
 
-model = load('../word2vec/logistic_model.joblib')
+model = load(r'C:\Users\lenovo\Desktop\text_classification\word2vec\logistic_model.joblib')
 wv = KeyedVectors.load("../word2vec/word2vec-google-news-100-pca-fp16.model")
 nlp_small = spacy.load("../word2vec/en_core_web_sm_dir")
 stop_words_small = nlp_small.Defaults.stop_words
+
 
 def tokenizer(sentence):
     punctuations = string.punctuation
@@ -45,3 +46,6 @@ def predict_(sentence):
     words = tokenizer(sentence)
     average_vector = avg_vector(words)
     return model.predict([average_vector])
+
+
+print ("Prediction module loaded successfully.")

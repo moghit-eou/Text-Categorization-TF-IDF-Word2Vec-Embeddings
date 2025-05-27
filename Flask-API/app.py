@@ -28,4 +28,4 @@ def classify():
     return jsonify({"prediction": predict_(email_body)[0]})
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)

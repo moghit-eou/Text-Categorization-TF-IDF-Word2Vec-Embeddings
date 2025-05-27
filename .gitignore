@@ -1,2 +1,3 @@
 venv/
 word2vec/old_model/
+.vercel

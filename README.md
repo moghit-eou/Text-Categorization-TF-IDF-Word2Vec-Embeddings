@@ -1,16 +1,23 @@
-# <div align="center">**End-to-End Email Categorization (TF‑IDF + Word2Vec)**</div>
-
+## <div align="center">Technologies Used</div>
 <div align="center">
-  <img src="https://miro.medium.com/v2/1*2QYim4bJ9LyO1pziQNJXMA.jpeg" alt="Docker" width="80">
+  <img src="https://miro.medium.com/v2/1*2QYim4bJ9LyO1pziQNJXMA.jpeg" alt="Python" width="80">
   <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Flask_logo.svg" alt="Flask" width="120">
   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXSQY3mAF3wblmN0G5jKuBLPZvvGHvEnh3eA&s" alt="spaCy" width="120">
   <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="Scikit-learn" width="120">
-
-  <img src="https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fd1e00ek4ebabms.cloudfront.net%2Fproduction%2F20523795-74c3-431b-b744-d515fc74c336.jpg?source=next-article&fit=scale-down&quality=highest&width=700&dpr=1" alt="n8n" width="100">
-
-
+   <img src="https://avatars.githubusercontent.com/u/45487711?s=200&v=4" alt="n8n" width="60">
+  <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face" width="80">
 </div>
- 
+
+
+
+### Libraries
+- **NLP**: spaCy, Gensim (Word2Vec)
+- **ML**: scikit-learn (TF‑IDF, PCA, Logistic Regression)
+- **Serving**: Flask
+- **Automation**: n8n
+- **Utilities**: NumPy, Pandas, Joblib
+
+
 ---
 
 ## <div align="center">Project Overview</div>
@@ -252,26 +259,8 @@ curl --get "http://localhost:7860/vectorization" \
 
 ---
 
-## <div align="center">Technologies Used</div>
-<div align="center">
-  <img src="https://miro.medium.com/v2/1*2QYim4bJ9LyO1pziQNJXMA.jpeg" alt="Python" width="80">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Flask_logo.svg" alt="Flask" width="120">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXSQY3mAF3wblmN0G5jKuBLPZvvGHvEnh3eA&s" alt="spaCy" width="120">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="Scikit-learn" width="120">
-   <img src="https://avatars.githubusercontent.com/u/45487711?s=200&v=4" alt="n8n" width="60">
-  <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face" width="80">
-</div>
 
 
-
-### Libraries
-- **NLP**: spaCy, Gensim (Word2Vec)
-- **ML**: scikit-learn (TF‑IDF, PCA, Logistic Regression)
-- **Serving**: Flask
-- **Automation**: n8n
-- **Utilities**: NumPy, Pandas, Joblib
-
----
 
 
 ## <div align="center">License</div>

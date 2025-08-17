@@ -1,13 +1,14 @@
 # <div align="center">**End-to-End Email Categorization (TF‑IDF + Word2Vec)**</div>
 
 <div align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" width="60">
+  <img src="https://miro.medium.com/v2/1*2QYim4bJ9LyO1pziQNJXMA.jpeg" alt="Docker" width="80">
   <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Flask_logo.svg" alt="Flask" width="120">
-  <img src="https://raw.githubusercontent.com/explosion/spaCy/master/website/static/img/logo.svg" alt="spaCy" width="120">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXSQY3mAF3wblmN0G5jKuBLPZvvGHvEnh3eA&s" alt="spaCy" width="120">
   <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="Scikit-learn" width="120">
-  <img src="https://raw.githubusercontent.com/RaRe-Technologies/gensim/develop/docs/src/_static/images/gensim_logo.png" alt="Gensim" width="150">
-  <img src="https://avatars.githubusercontent.com/u/45487711?s=200&v=4" alt="n8n" width="60">
-  <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face" width="120">
+
+  <img src="https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fd1e00ek4ebabms.cloudfront.net%2Fproduction%2F20523795-74c3-431b-b744-d515fc74c336.jpg?source=next-article&fit=scale-down&quality=highest&width=700&dpr=1" alt="n8n" width="100">
+
+
 </div>
 
 ---
@@ -36,20 +37,15 @@ It combines **classical NLP** (TF‑IDF) with **semantic embeddings** (Word2Vec)
 
 ## <div align="center">Project Structure</div>
 
-```mermaid
-graph TD;
-  A[Repo Root] --> B[Flask-API/];
-  A --> C[NLP_TF-IDF/];
-  A --> D[NLP_word2vec/];
-  A --> E[data/];
-  A --> F[requirements.txt];
-  A --> G[vercel.json];
-  A --> H[README.md];
-
-  C --> C1[Experiments & baselines];
-  D --> D1[PCA reduction & saving];
-  E --> E1[Models & artifacts];
-  B --> B1[app.py - API];
+```
+Text-Categorization-TF-IDF-Word2Vec-Embeddings/
+├─ Flask-API/                # Flask server (API endpoints, loading vectors/model)
+├─ NLP_TF-IDF/               # TF-IDF experiments/baselines
+├─ NLP_word2vec/             # Word2Vec + PCA reduction utilities and notebooks
+├─ data/                     # dataset
+├─ requirements.txt
+├─ vercel.json               # (optional) hosting config
+└─ README.md
 ```
 
 ---
@@ -81,7 +77,7 @@ graph TD;
     - Save as **float16** keyed vectors for efficient storage.
     
 <div align="center">
-  <img src="https://i.ibb.co/ccvMrr4s/image.png" alt="PCA & Quantization" width="300">
+  <img src="https://i.ibb.co/ccvMrr4s/image.png" alt="PCA & Quantization" width="500">
 </div>
 
 <details>
@@ -174,7 +170,7 @@ graph TD;
 
 ### `GET /classification`
 <div align="center">
-    <img src="https://i.ibb.co/Y7wncCm9/image.png" alt="Email Vectorization Example" width="300">
+    <img src="https://i.ibb.co/Y7wncCm9/image.png" alt="Email Vectorization Example" width="500">
   </div>
 
 - **Query**: `email_body` (string)
@@ -218,16 +214,16 @@ curl --get "http://localhost:7860/vectorization" \
 ---
 
 ## <div align="center">Technologies Used</div>
-
 <div align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" width="60">
+  <img src="https://miro.medium.com/v2/1*2QYim4bJ9LyO1pziQNJXMA.jpeg" alt="Python" width="80">
   <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Flask_logo.svg" alt="Flask" width="120">
-  <img src="https://raw.githubusercontent.com/explosion/spaCy/master/website/static/img/logo.svg" alt="spaCy" width="120">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXSQY3mAF3wblmN0G5jKuBLPZvvGHvEnh3eA&s" alt="spaCy" width="120">
   <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="Scikit-learn" width="120">
-  <img src="https://raw.githubusercontent.com/RaRe-Technologies/gensim/develop/docs/src/_static/images/gensim_logo.png" alt="Gensim" width="150">
-  <img src="https://avatars.githubusercontent.com/u/45487711?s=200&v=4" alt="n8n" width="60">
-  <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face" width="120">
+   <img src="https://avatars.githubusercontent.com/u/45487711?s=200&v=4" alt="n8n" width="60">
+  <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face" width="80">
 </div>
+
+
 
 ### Libraries
 - **NLP**: spaCy, Gensim (Word2Vec)
@@ -238,9 +234,6 @@ curl --get "http://localhost:7860/vectorization" \
 
 ---
 
-
-
----
 
 ## <div align="center">License</div>
 

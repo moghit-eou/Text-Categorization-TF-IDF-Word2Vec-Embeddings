@@ -14,9 +14,12 @@
 ---
 
 ## <div align="center">Project Overview</div>
-
-This project delivers a **production-ready pipeline** to classify incoming **emails** into three HR-related categories: **`high_priority`**, **`low_priority`**, and **`job_applicant`**.  
-It combines **classical NLP** (TF‑IDF) with **semantic embeddings** (Word2Vec), reduces dimensionality with **PCA (300→100)**, applies **precision quantization**, and serves predictions through a **Flask API** consumed by **n8n**.
+This project is a component of a larger n8n automation workflow, showcasing how to categorize HR-related emails using modern NLP and machine learning techniques.
+- 🚀 **Effortlessly manage HR emails** with a fast, production-ready pipeline.
+- 📨 **Automatic categorization**: `high_priority`, `low_priority`, or `job_applicant`.
+- 🧠 **Smarter text analysis** using TF‑IDF + Word2Vec.
+- ⚡ **Rapid, memory-efficient predictions** with PCA & float16 quantization.
+- 🔗 **Easy integration** via scalable Flask API & n8n workflows for automated routing.
 
 ---
 
@@ -50,15 +53,15 @@ Text-Categorization-TF-IDF-Word2Vec-Embeddings/
 
 ---
 
-## <div align="center">How to Run</div>
+# <div align="center">How to Run</div>
 
-1. **Clone the Repository**
+### 1. **Clone the Repository**
    ```bash
    git clone https://github.com/moghit-eou/Text-Categorization-TF-IDF-Word2Vec-Embeddings.git
    cd Text-Categorization-TF-IDF-Word2Vec-Embeddings
    ```
 
-2. **Create Environment & Install Deps**
+### 2. **Create Environment & Install Deps**
    ```bash
    python3.10 -m venv .venv
    # Windows: py -3.10 -m venv .venv
@@ -66,7 +69,6 @@ Text-Categorization-TF-IDF-Word2Vec-Embeddings/
    pip install -r requirements.txt
    ```
 
-3. **Prepare Word2Vec Vectors**
   ### 3. **Prepare Word2Vec Vectors**
 
   1. **Download GoogleNews Word2Vec (300‑dim, ~3.5GB)**
@@ -133,7 +135,7 @@ Text-Categorization-TF-IDF-Word2Vec-Embeddings/
 </details>
 
 - **Classify with ML Model**:  
-  Feed the vector into the trained Logistic Regression classifier to predict the category (`high_priority`, `low_priority`, or `job_applicant`).
+  Training Logistic Regression classifier to predict the category (`high_priority`, `low_priority`, or `job_applicant`).
   | Model                | Accuracy | Macro‑F1 |
   |----------------------|---------:|---------:|
   | Naive Bayes          |   0.83   |   0.82   |
@@ -159,7 +161,28 @@ Text-Categorization-TF-IDF-Word2Vec-Embeddings/
   </div>
 </details>
 
+---
 
+## <div align="center">Deploy on Hugging Face Spaces using Docker</div>
+> **Note:** Only **Hugging Face Spaces** and **AWS EC2** worked for me 
+> Free platforms like Vercel and similar only work for small models; for larger models/vectors, you need a paid plan.
+
+1. **Ready-to-use Demo**  
+  Access the live app: [Hugging Face Space](https://huggingface.co/spaces/moghit/word2vec-embeddings)  
+  > Note: The Space may be in sleep mode; allow ~20s for startup.
+
+2. **Dockerized Deployment**  
+  The API is containerized for reproducible deployment.  
+  - Build: `docker build -t email-categorizer .`
+  - Run: `docker run -p 7860:7860 email-categorizer`
+
+3. **Automatic Startup**  
+  Hugging Face Spaces handles container orchestration and exposes the Flask API.
+
+4. **Direct Access**  
+  Test endpoints via browser or `curl` once the Space is active.
+
+---  
 
 
 
@@ -197,7 +220,7 @@ curl --get "http://localhost:7860/vectorization" \
 {"vector":[0.0132,-0.0479,0.0211, ... 100 dims ...]}
 ```
 
-> Document vectors are **mean-pooled** Word2Vec embeddings (OOV tokens skipped).
+> Document vectors are **mean-pooled** Word2Vec embeddings .
 
 ---
 

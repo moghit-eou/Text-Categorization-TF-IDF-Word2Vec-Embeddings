@@ -24,7 +24,8 @@ This project is a component of a larger n8n automation workflow, showcasing how 
 ---
 
 ## <div align="center">✨ Features Overview</div>
-
+- 📖 **Documentation (French)**:  
+  See [Chapter 5 of the report](https://drive.google.com/file/d/1zczUyl51G2qE0vfhcx6JZmcey4K1zOU3/view?usp=sharing) for a detailed explanation of the project, including methodology, results, and technical choices. *(Content in French)*
 - 🧠 **NLP Preprocessing (spaCy)**:  
   Tokenization, lowercasing, stop-word filtering, and optional lemmatization for clean input.
 

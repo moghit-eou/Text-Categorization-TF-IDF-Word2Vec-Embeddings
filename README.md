@@ -23,18 +23,33 @@ This project is a component of a larger n8n automation workflow, showcasing how 
 
 ---
 
-## <div align="center">Features</div>
+## <div align="center">✨ Features Overview</div>
 
-- **NLP Preprocessing (spaCy)**: tokenization, lowercasing, stop-word filtering, optional lemmatization.
-- **Hybrid Vectorization**:
-  - **TF‑IDF** baseline (lexical signal).
-  - **Word2Vec** (semantic signal) with **mean pooling** for document vectors.
-- **Modeling**: compared **Logistic Regression** (selected), **Naive Bayes**, **KNN**.
-- **Dimensionality Reduction**: **PCA** from **300 → 100 dims** for faster inference and smaller artifacts.
-- **Quantization**: store vectors as **float16** to cut memory footprint.
-- **REST API**: `/classification` and `/vectorization` endpoints (GET).
-- **Workflow Automation (n8n)**: Gmail Trigger → HTTP Request (API) → Switch & routing.
-- **Deployment**: ready for **Hugging Face Spaces** / **Vercel** / traditional servers.
+- 🧠 **NLP Preprocessing (spaCy)**:  
+  Tokenization, lowercasing, stop-word filtering, and optional lemmatization for clean input.
+
+- 🔀 **Hybrid Vectorization**:  
+  - **TF‑IDF** baseline for lexical signals.  
+  - **Word2Vec** for semantic signals, using **mean pooling** for robust document vectors.
+
+- 🤖 **Modeling Choices**:  
+  Compared **Logistic Regression** (selected), **Naive Bayes**, and **KNN** for best results.
+
+- ⚡ **Dimensionality Reduction**:  
+  **PCA** compresses vectors from **300 → 100 dims** for lightning-fast inference and compact storage.
+
+- 💾 **Quantization**:  
+  Vectors stored as **float16** to minimize memory usage.
+
+- 🌐 **REST API Endpoints**:  
+  `/classification` and `/vectorization` (GET) for easy integration.
+
+- 🔗 **Workflow Automation (n8n)**:  
+  Gmail Trigger → HTTP Request (API) → Switch & routing for seamless email management.
+
+- 🚀 **Deployment Ready**:  
+  Supports **Hugging Face Spaces**, **Vercel**, and traditional servers for flexible hosting.
+
 
 ---
 
